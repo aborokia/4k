@@ -1,0 +1,4 @@
+{% extends 'base.html' %}{% block title %}4K STORE | متجر الألعاب{% endblock %}{% block content %}
+<section class="hero"><div><span class="eyebrow">NEXT LEVEL GAMING STORE</span><h1>كل ألعابك المفضلة<br><strong>في مكان واحد.</strong></h1><p>واجهة سريعة، حسابات آمنة، طلبات منظمة ولوحة تحكم كاملة لإدارة متجرك.</p><a class="btn" href="{{ url_for('products') }}">تصفح الألعاب</a></div><div class="hero-logo"><img src="{{ url_for('static',filename='images/logo.png') }}" alt="4K STORE"></div></section>
+<section class="section-head"><div><span class="eyebrow">FEATURED</span><h2>أحدث المنتجات</h2></div><a href="{{ url_for('products') }}">عرض الكل ←</a></section><div class="products">{% for p in products[:6] %}{% include 'shop/card.html' %}{% endfor %}</div>
+{% endblock %}
